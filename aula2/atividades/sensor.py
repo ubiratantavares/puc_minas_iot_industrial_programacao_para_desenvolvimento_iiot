@@ -5,7 +5,7 @@ Atividades de Orientação a Objetos
 class Sensor:
 
     def __init__(self, nome, valor):
-        self.__nome = nome
+        self.__nome = self.nome
         self.__valor = valor
 
     @property
