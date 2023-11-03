@@ -1,0 +1,8 @@
+PAGE
+    Toplevel: Principal
+        Button: btnEnviar   command: cliquebtnEnviar bind: <Button-1> to {lambda e: clique_btnEnviar(e)}
+        Label: lblLogin  
+        Entry: txtLogin  
+        Label: lblSenha  
+        Entry: txtSenha  
+

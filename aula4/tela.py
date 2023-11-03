@@ -4,6 +4,7 @@
 
 # pyinstaller --onefile tela.py --noconsole
 
+import tela_support
 import sys
 import tkinter as tk
 import tkinter.ttk as ttk
@@ -13,23 +14,23 @@ import os.path
 _script = sys.argv[0]
 _location = os.path.dirname(_script)
 
-import aula4.tela_support
 
 _bgcolor = '#d9d9d9'  # X11 color: 'gray85'
 _fgcolor = '#000000'  # X11 color: 'black'
-_compcolor = 'gray40' # X11 color: #666666
-_ana1color = '#c3c3c3' # Closest X11 color: 'gray76'
-_ana2color = 'beige' # X11 color: #f5f5dc
-_tabfg1 = 'black' 
-_tabfg2 = 'black' 
-_tabbg1 = 'grey75' 
-_tabbg2 = 'grey89' 
-_bgmode = 'light' 
+_compcolor = 'gray40'  # X11 color: #666666
+_ana1color = '#c3c3c3'  # Closest X11 color: 'gray76'
+_ana2color = 'beige'  # X11 color: #f5f5dc
+_tabfg1 = 'black'
+_tabfg2 = 'black'
+_tabbg1 = 'grey75'
+_tabbg2 = 'grey89'
+_bgmode = 'light'
+
 
 class Toplevel1:
 
     def calcular(self):
-        altura =   float(self.altura.get())
+        altura = float(self.altura.get())
         raio = float(self.diametro.get())/2
         area = round(3.14*raio**2*altura)
         self.Label3_3.configure(text='Volume: '+str(area)+" m²")
@@ -51,8 +52,9 @@ class Toplevel1:
         self.altura = tk.StringVar()
         self.diametro = tk.StringVar()
 
-        self.menubar = tk.Menu(top,font="TkMenuFont", bg=_bgcolor,fg=_fgcolor)
-        top.configure(menu = self.menubar)
+        self.menubar = tk.Menu(top, font="TkMenuFont",
+                               bg=_bgcolor, fg=_fgcolor)
+        top.configure(menu=self.menubar)
 
         self.Label1 = tk.Label(self.top)
         self.Label1.place(relx=0.588, rely=-0.042, height=886, width=1167)
@@ -64,14 +66,15 @@ class Toplevel1:
         self.Label1.configure(foreground="#000000")
         self.Label1.configure(highlightbackground="#d9d9d9")
         self.Label1.configure(highlightcolor="black")
-        photo_location = os.path.join(_location,"aula3/imagens/tanque.png")
+        photo_location = os.path.join(
+            _location, "D:/GitHub/puc_minas_iot_industrial_programacao_para_desenvolvimento_iiot/aula3/imagens/tanque.png")
         global _img0
         _img0 = tk.PhotoImage(file=photo_location)
         self.Label1.configure(image=_img0)
 
         self.Frame1 = tk.Frame(self.top)
-        self.Frame1.place(relx=0.039, rely=0.239, relheight=0.726
-                , relwidth=0.529)
+        self.Frame1.place(relx=0.039, rely=0.239,
+                          relheight=0.726, relwidth=0.529)
         self.Frame1.configure(relief='groove')
         self.Frame1.configure(borderwidth="2")
         self.Frame1.configure(relief="groove")
@@ -186,8 +189,10 @@ class Toplevel1:
 
         self.Button1.configure(command=self.calcular)
 
+
 def start_up():
     tela_support.main()
+
 
 if __name__ == '__main__':
     tela_support.main()

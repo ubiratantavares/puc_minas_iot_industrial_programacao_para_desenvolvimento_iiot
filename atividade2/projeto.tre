@@ -1,0 +1,49 @@
+PAGE
+    Toplevel: Tela Principal
+        Menu Bar
+        Canvas: cvsCabecalho  
+            Label: lblTitulo  
+            Label: lblNome  
+        Canvas: cvsMotor1  
+            Label: lblMotor1  
+            Label: imgMotor1  
+        Canvas: cvsMotor2  
+            Label: lblMotor2  
+            Label: imgMotor2  
+        Canvas: cvsTanque1  
+            Label: lblTanque1  
+            Label: txtVolTanque1  
+            Label: txtMetroTanque1  
+            Label: txtCuboTanque1  
+        Canvas: cvsTanque2  
+            Label: lblTanque2  
+            Label: txtVolTanque2  
+            Label: txtMetroTanque2  
+            Label: txtCuboTanque2  
+        Canvas: cvsBotoes  
+            Button: btnAlerta   bind: <Button-1> to {lambda e: alertar(e)}
+            Button: btnGrafico   bind: <Button-1> to {lambda e: plotar(e)}
+        Label: imgInstituicao  
+        Label: lblDisciplina  
+        Canvas: cvcTanques  
+            Canvas: cvcRetanguloAzul  
+            Canvas: cvcRetanguloBranco  
+            Label: imgTanques  
+    Toplevel: Error Information
+        
+             command: 
+        set exit_flag 1
+        set exitvar 1
+    
+             command: 
+        vTcl:save_err_msg
+        set exit_flag 1
+        set exitvar 1
+    
+             command: 
+        destroy .err_top
+       set exit_flag 0
+        set exitvar 1
+    
+        
+

@@ -1,0 +1,1 @@
+python C:/page/page.py projeto.tcl
